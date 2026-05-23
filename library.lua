@@ -30,10 +30,13 @@ function Junkie.check_key(key)
 	if resp.StatusCode ~= 200 then
 		return {valid = false, error = "http " .. resp.StatusCode}
 	end
-	for i,v in HttpService:JSONDecode(resp.Body) do
-		print(i,v)
+	local data = HttpService:JSONDecode(resp.Body)
+
+	for i, v in pairs(data) do
+    	print(i, v)
 	end
-    return HttpService:JSONDecode(resp.Body)
+
+	return data
 end
 
 function Junkie.get_key_link(provider)
