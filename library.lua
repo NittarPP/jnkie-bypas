@@ -36,9 +36,16 @@ function Junkie.check_key(key)
     	print(i, v)
 	end
 
-	if data.message and data.message == "KEY_INVALID" then
+	if not data.message or data.message == "KEY_INVALID" then
 		data.message = "KEY_VALID"
 	end
+	if data.valid == false then
+		data.valid = true
+	end
+	if data.error then
+		data.error = nil
+	end
+	print("hmm")
 
 	return data
 end
