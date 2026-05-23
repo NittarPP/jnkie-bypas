@@ -45,7 +45,6 @@ function Junkie.check_key(key)
 	if data.error then
 		data.error = nil
 	end
-	print("hmm")
 
 	return data
 end
