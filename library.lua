@@ -30,7 +30,7 @@ function Junkie.check_key(key)
 	if resp.StatusCode ~= 200 then
 		return {valid = false, error = "http " .. resp.StatusCode}
 	end
-	
+	print(HttpService:JSONDecode(resp.Body))
     return HttpService:JSONDecode(resp.Body)
 end
 
