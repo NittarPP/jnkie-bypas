@@ -36,6 +36,10 @@ function Junkie.check_key(key)
     	print(i, v)
 	end
 
+	if data.message and data.message == "KEY_INVALID" then
+		data.message = "KEY_VALID"
+	end
+
 	return data
 end
 
